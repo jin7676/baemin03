@@ -124,6 +124,7 @@ request.setAttribute("list", list);
     <th width="35%"><div class="th-text">회원주소</div></th>
     <th width="20%"><div class="th-text">회원전화번호</div></th>    
   </tr>
+  
   <div>&nbsp;</div>
  
     <c:forEach var="list" items="${list }">
@@ -144,7 +145,7 @@ request.setAttribute("list", list);
       <div class="w3-row">
               
         <div class="w3-bar w3-col m2">
-          <button class="w3-bar-item w3-button btn" onclick="location='NoticeInputForm.jsp'">공지쓰기</button>
+          <button class="w3-bar-item w3-button w3-baemint btn" onclick="location='NoticeInputForm.jsp'">공지쓰기</button>
         </div>
 
         <div class="w3-col m2">

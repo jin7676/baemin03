@@ -143,7 +143,7 @@ request.setAttribute("list", list);
 				<div class="w3-row">
 
 					<div class="w3-bar w3-col m2">
-						<button class="w3-bar-item w3-button btn"
+						<button class="w3-bar-item w3-button w3-baemint btn"
 							onclick="location='NoticeInputForm.jsp'">공지쓰기</button>
 					</div>
 
