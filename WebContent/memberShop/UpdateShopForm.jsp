@@ -76,7 +76,7 @@
 	<div class="sw-topnav-margin">&nbsp;</div>
 
 	<!-- CONTENT ------------------------------------------------------------------------------------ -->
-	<form method="post" action="UpdateShopPro.jsp">
+	<form method="post" action="UpdateShopPro.jsp" onsubmit="return checkIt()">
 	<div class="sw-center" style="margin-top: 2%">
 		<!-- 가로복 제한 400~1200 ---------------------------------------------------------------------------------->
 		<!-- 400~1200 사이로 조절 가능 ---------------------------------------------------------------------------------->
