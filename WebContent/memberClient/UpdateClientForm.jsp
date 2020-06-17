@@ -36,25 +36,21 @@
 } */
 </style>
 <script>
-	function checkIt(){
-		  if($("#password").val()==''){
-			  alert("비밀번호를 입력하세요");
-			  $("#password").focus();
-			  return false;
-		  }
-		  if($("#password2").val()==""){
-		  	  alert("비밀번호 확인을 입력하세요.");
-			  $("#password2").focus();
-			  return false;
-		  }
-			
-		  if($("#password").val() != $("#password2").val()){
-			  alert("비밀번호 확인을 잘못입력하였습니다.");
-			  $("#password").val('').focus();
-			  $("#password2").val('');
-			  return false;
-		  }
-	}//checkIt() end
+window.onload = function(){
+	setInterval(function (){
+	console.log("setInterval()구동 중");
+		var pw = $("#password").val();
+		var pw2 = $("#password2").val();
+		
+		if(!pw || !pw2 || pw.length<4 || pw.length>12 || pw2.length<4 || pw2.length>12){
+			$(".pwtx").text("비밀번호가 틀립니다.");
+			document.getElementById("btn").disabled=true;
+		}else{
+			$(".pwtx").text("비밀번호가 같습니다.");
+			document.getElementById("btn").disabled=false;
+		}
+	}, 500);
+}
 </script>
 </head>
 <body>
@@ -103,10 +99,11 @@
 							  <input type="password" class="w3-input w3-border" size="10" id="password" name="password">
 							  <input type="password" class="w3-input w3-border" size="10" id="password2" name="password2">
 						  </p>
+						  <div class="pwtx"></div>
 					  
 						  <input type="hidden" value="${dto.regDate }">
 					  <div class="w3-section w3-center">
-	   				  	<input class="w3-button w3-border w3-baemint" type="submit" value="회원정보수정">
+	   				  	<input class="w3-button w3-border w3-baemint" type="submit" value="회원정보수정" id="btn" disabled="disabled">
 	   				  	<input class="w3-button w3-border w3-baemint" type="reset" value="다시쓰기">
 					  	<input class="w3-button w3-border w3-baemint" type="button" value="취소" onclick="javascript:history.back()">
 					  </div>
