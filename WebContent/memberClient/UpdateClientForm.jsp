@@ -42,12 +42,14 @@ window.onload = function(){
 		var pw = $("#password").val();
 		var pw2 = $("#password2").val();
 		
-		if(!pw || !pw2 || pw.length<4 || pw.length>12 || pw2.length<4 || pw2.length>12){
+		if(pw!=pw2 || pw.length<4 || pw.length>12 || pw2.length<4 || pw2.length>12){
 			$(".pwtx").text("비밀번호가 틀립니다.");
 			document.getElementById("btn").disabled=true;
+			document.getElementById("pwtx").style.color="red";
 		}else{
 			$(".pwtx").text("비밀번호가 같습니다.");
 			document.getElementById("btn").disabled=false;
+			document.getElementById("pwtx").style.color="blue";
 		}
 	}, 500);
 }
@@ -99,7 +101,7 @@ window.onload = function(){
 							  <input type="password" class="w3-input w3-border" size="10" id="password" name="password">
 							  <input type="password" class="w3-input w3-border" size="10" id="password2" name="password2">
 						  </p>
-						  <div class="pwtx"></div>
+						  <div class="pwtx" id="pwtx"></div>
 					  
 						  <input type="hidden" value="${dto.regDate }">
 					  <div class="w3-section w3-center">
